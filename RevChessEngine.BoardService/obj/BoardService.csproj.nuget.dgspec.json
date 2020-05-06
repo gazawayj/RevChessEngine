@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/j/revature_staging/RevChessEngine/BoardService/BoardService.csproj": {}
+    "/home/j/revature_staging/RevChessEngine/RevChessEngine.BoardService/BoardService.csproj": {}
   },
   "projects": {
-    "/home/j/revature_staging/RevChessEngine/BoardService/BoardService.csproj": {
+    "/home/j/revature_staging/RevChessEngine/RevChessEngine.BoardService/BoardService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/j/revature_staging/RevChessEngine/BoardService/BoardService.csproj",
+        "projectUniqueName": "/home/j/revature_staging/RevChessEngine/RevChessEngine.BoardService/BoardService.csproj",
         "projectName": "BoardService",
-        "projectPath": "/home/j/revature_staging/RevChessEngine/BoardService/BoardService.csproj",
+        "projectPath": "/home/j/revature_staging/RevChessEngine/RevChessEngine.BoardService/BoardService.csproj",
         "packagesPath": "/home/j/.nuget/packages/",
-        "outputPath": "/home/j/revature_staging/RevChessEngine/BoardService/obj/",
+        "outputPath": "/home/j/revature_staging/RevChessEngine/RevChessEngine.BoardService/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/j/.nuget/NuGet/NuGet.Config"

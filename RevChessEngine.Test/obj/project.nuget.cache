@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HTZvZLaNXeaoIF6yZhMkAN1mC+FStJ6mj9Lj8nubw3fvkzIOeFcQPb36eHEc3B69L52uRL2s4erCuxD+x7YzNw==",
+  "dgSpecHash": "3kyr6MLZhjIhpE6bH8Q9D3J7VDG9pIVad3k8sP8eV4iG8JC0BTiIRcyiE7jRrqFI6SIggHIJFQAeN0A0uNfdgw==",
   "success": true,
-  "projectFilePath": "/home/j/revature_staging/RevChessEngine/Test/Test.csproj",
+  "projectFilePath": "/home/j/revature_staging/RevChessEngine/RevChessEngine.Test/Test.csproj",
   "expectedPackageFiles": [
     "/home/j/.nuget/packages/coverlet.collector/1.2.0/coverlet.collector.1.2.0.nupkg.sha512",
     "/home/j/.nuget/packages/microsoft.codecoverage/16.2.0/microsoft.codecoverage.16.2.0.nupkg.sha512",
