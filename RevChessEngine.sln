@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardService", "BoardService\BoardService.csproj", "{FF0C2EA2-575C-4633-8A04-F5E020D53F6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardService", "RevChessEngine.BoardService\BoardService.csproj", "{FF0C2EA2-575C-4633-8A04-F5E020D53F6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{2FCB2EE0-71E6-4796-995C-F0AC37D54748}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "RevChessEngine.Client\Client.csproj", "{2FCB2EE0-71E6-4796-995C-F0AC37D54748}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{B6FB75A1-C117-4CB6-81A1-7C3E85C9745F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "RevChessEngine.Test\Test.csproj", "{B6FB75A1-C117-4CB6-81A1-7C3E85C9745F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService", "UserService\UserService.csproj", "{EE4A90AC-D019-4878-A852-D72E37FDF74F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService", "RevChessEngine.UserService\UserService.csproj", "{EE4A90AC-D019-4878-A852-D72E37FDF74F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
