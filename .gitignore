@@ -2,5 +2,7 @@
 .vscode/
 bin/
 obj/
+bin
+obj
 */obj/
 *.code-workspace
