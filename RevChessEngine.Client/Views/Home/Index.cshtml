@@ -9,17 +9,12 @@
     <link rel="stylesheet" href="~/chessboard/css/chessboard-1.0.0.min.css">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="~/chessboard/js/chessboard-1.0.0.min.js"></script>
+    <script src="~/chess.js-master/chess.js"></script>
   </head>
   <body>
-    <div id="board1" style="width: 400px"></div>
-    <script type="text/javascript">
-    $(function() {
-      var config = {
-        pieceTheme: 'chessboard/img/chesspieces/wikipedia/{piece}.png',
-        position: 'start'
-      };
-      var chessBoard = ChessBoard('board1', config);
-    }); 
-    </script>
+    <div id="myBoard" style="width: 400px"></div>
+    <button id="showPositionBtn">Show position in console</button>
+    <button id="flipOrientationBtn">Flip Orientation</button>
+    <script src="~/js/chessMain.js"></script>
   </body>
 </html>
