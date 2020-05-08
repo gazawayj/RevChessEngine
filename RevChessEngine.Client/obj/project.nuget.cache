@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Cx4TwCUSW/4S4wyiiHAx1WHcBsZm93bAPnMrByg3o03FpmKdRmwzjgiSUGMe7JAu8+l/N8eBnr8cqGkjMUuI2Q==",
+  "dgSpecHash": "G1/gp5/9GFbUwyT3iOoTYU2lJTeuJQgBeO2L5w5r4xO7JQRFhiUxdyJ2KnA4uTDBs4Hcwe81MN1hHIUSRz1hVw==",
   "success": true,
-  "projectFilePath": "/home/j/revature_staging/RevChessEngine/RevChessEngine.Client/Client.csproj",
+  "projectFilePath": "/Users/rcomputer/Desktop/RevChess/RevChessEngine/RevChessEngine.Client/Client.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

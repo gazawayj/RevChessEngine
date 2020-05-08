@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xsUT0T4RwF/w0ij4Y98iZwM6gqPUyuod9r5PIltbCfL1ehVBJlouUR4li5z5MU32PgcR8thih8u+3AtA5fiLsQ==",
+  "dgSpecHash": "G/5fm1jpS53gfQtoOUjS4mbUANCGRoC0FKeo8qzx7lpNw/HLX5gSIqksYlB89Jozyt3Ez815QBmjaoTRTqVyKA==",
   "success": true,
-  "projectFilePath": "/home/j/revature_staging/RevChessEngine/RevChessEngine.BoardService/BoardService.csproj",
+  "projectFilePath": "/Users/rcomputer/Desktop/RevChess/RevChessEngine/RevChessEngine.BoardService/BoardService.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
