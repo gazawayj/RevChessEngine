@@ -1,6 +1,6 @@
 console.log("starting chessMain");
-var board = null
-var game = new Chess()
+var board = null;
+var game = new Chess();
 
 function onDragStart (source, piece, position, orientation) {
   // do not pick up pieces if the game is over
@@ -12,14 +12,54 @@ function onDragStart (source, piece, position, orientation) {
 
 // place position picking algorithm here
 function makeRandomMove () {
-  var possibleMoves = game.moves()
+  var possibleMoves = game.moves( { verbose: true })
+  var possibleCaptures = [];
 
   // game over
   if (possibleMoves.length === 0) return
 
-  var randomIdx = Math.floor(Math.random() * possibleMoves.length)
-  game.move(possibleMoves[randomIdx])
-  board.position(game.fen())
+  possibleMoves.forEach(move => {
+    if(move.flags == "c") {
+      possibleCaptures.push(move);
+    }
+  });
+
+  // default to random move if no captures available
+  var bestCapture = possibleMoves[Math.floor(Math.random() * possibleMoves.length)];
+  var bestCaptureValue = 0;
+  
+  possibleCaptures.forEach(capture => {
+    if(getPieceValue(game.get(capture.to)) > bestCaptureValue) {
+      bestCaptureValue = getPieceValue(game.get(capture.to));
+      bestCapture = capture;
+    }
+  });
+
+  game.move(bestCapture);
+  board.position(game.fen());
+}
+
+function getPieceValue(piece) {
+  if (piece === null) {
+    return 0;
+  }
+  var getValue = function (piece) {
+    if (piece.type === 'p') {
+        return 10;
+    } else if (piece.type === 'r') {
+        return 50;
+    } else if (piece.type === 'n') {
+        return 30;
+    } else if (piece.type === 'b') {
+        return 30 ;
+    } else if (piece.type === 'q') {
+        return 90;
+    } else if (piece.type === 'k') {
+        return 900;
+    }
+    throw "" + piece.type + " is not a valid piece type!";
+    };
+    return getValue(piece);
 }
 
 function clickShowPositionBtn () {
