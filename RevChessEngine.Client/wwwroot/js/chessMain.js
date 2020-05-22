@@ -1,6 +1,7 @@
 console.log("starting chessMain");
 var board = null;
 var game = new Chess();
+var searchDepth = 2;
 
 function onDragStart (source, piece, position, orientation) {
   // do not pick up pieces if the game is over
@@ -10,8 +11,82 @@ function onDragStart (source, piece, position, orientation) {
   if (piece.search(/^b/) !== -1) return false
 }
 
-// place position picking algorithm here
-function makeRandomMove () {
+function makeBestMove() {
+  game.move(findBestMove());
+  board.position(game.fen());
+}
+
+function findBestMove() {
+  let possibleMoves = game.moves();
+  if(possibleMoves.length === 0)
+    return;
+
+  let bestMoveScore = -9999;
+  let bestMove;
+  possibleMoves.forEach(move => {
+    game.move(move);
+    let currentScore = minimax(searchDepth, game, true);
+    if(currentScore > bestMoveScore) {
+      bestMove = move;
+      bestMoveScore = currentScore;
+      console.log("best move: ", bestMove, "currentScore ", bestMoveScore);
+    }
+    game.undo();
+  });
+
+  if(bestMove === undefined) {
+    console.log("Something went wrong. Executing default capture/random move.");
+    makeBestCapture;
+  } else {
+    return bestMove;
+  }
+}
+
+function minimax(depth, curGame, playerIsWhite) {
+  if (depth === 0) {
+    return boardEvaluation(curGame.board());
+  }
+
+  let possibleMoves = curGame.moves();
+  if (playerIsWhite) {
+    let bestMove = -9999;
+    possibleMoves.forEach(move => {
+      curGame.move(move);
+      bestMove = Math.max(bestMove, minimax(depth - 1, curGame, !playerIsWhite));
+      curGame.undo();
+    });
+    return bestMove;
+  } else {
+    let bestMove = 9999;
+    possibleMoves.forEach(move => {
+      curGame.move(move);
+      bestMove = Math.min(bestMove, minimax(depth - 1, curGame, !playerIsWhite));
+      curGame.undo();
+    });
+    return bestMove;
+  }
+}
+
+function boardEvaluation(currentBoard) {
+  let totalPieceVal = 0;
+  currentBoard.forEach(positions => {
+    positions.forEach(square => {
+      totalPieceVal += getPieceValue(square);
+    });
+  });
+  return totalPieceVal;
+}
+
+ /**
+  * evaluateAllBoard {
+  *   total piece val = 0;
+  *   go through all the board {
+  *     sum up all piece
+  *   } 
+  * }
+  */
+
+function makeBestCapture () {
   var possibleMoves = game.moves( { verbose: true })
   var possibleCaptures = [];
 
@@ -29,12 +104,11 @@ function makeRandomMove () {
   var bestCaptureValue = 0;
   
   possibleCaptures.forEach(capture => {
-    if(getPieceValue(game.get(capture.to)) > bestCaptureValue) {
+    if(getPieceValue(game.get(capture.to)) < bestCaptureValue) {
       bestCaptureValue = getPieceValue(game.get(capture.to));
       bestCapture = capture;
     }
   });
-
   game.move(bestCapture);
   board.position(game.fen());
 }
@@ -58,8 +132,14 @@ function getPieceValue(piece) {
         return 900;
     }
     throw "" + piece.type + " is not a valid piece type!";
-    };
+  };
+  //
+  if(piece.color === 'w') {
+    //bitwise operator to convert number to negative
+    return ~getValue(piece) + 1;
+  } else {
     return getValue(piece);
+  }
 }
 
 function clickShowPositionBtn () {
@@ -82,8 +162,8 @@ function onDrop (source, target) {
   // illegal move
   if (move === null) return 'snapback'
 
-  // make random legal move for black
-  window.setTimeout(makeRandomMove, 250)
+  // make best legal move for black
+  window.setTimeout(makeBestMove, 250)
 }
 
 // update the board position after the piece snap
